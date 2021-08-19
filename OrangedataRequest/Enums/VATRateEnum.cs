@@ -8,7 +8,7 @@
         /// <summary>
         ///     ставка НДС 18%
         /// </summary>
-        VAT18 = 1,
+        VAT20 = 1,
         /// <summary>
         ///     ставка НДС 10%
         /// </summary>
