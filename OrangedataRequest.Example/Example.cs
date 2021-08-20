@@ -21,21 +21,21 @@ namespace TestLauncher
 
             ReqCreateCheck dummyCreateCheckRequest = new ReqCreateCheck
             {
-                Id = "66549876222",
+                Id = "66549876224",
                 INN = "7705721283",
                 Key = "7705721283",
                 Content = new Content
                 {
                     Type = DocTypeEnum.In,
-                    AgentType = AgentTypeEnum.PayingAgent,
+                    //AgentType = AgentTypeEnum.,
                     CheckClose = new CheckClose
                     {
                         Payments = new[]
                         {
                             new Payment
                             {
-                                Amount = 123.45m,
-                                Type = PaymentTypeEnum.Cash
+                                Amount = 123.00m,
+                                Type = PaymentTypeEnum.Emoney
                             }
                         },
                         TaxationSystem = TaxationSystemEnum.Simplified
@@ -44,7 +44,7 @@ namespace TestLauncher
                     {
                         new Position
                         {
-                            Price = 123.45m,
+                            Price = 123.00m,
                             Quantity = 1m,
                             Tax = VATRateEnum.NONE,
                             Text = "Булка",
@@ -52,6 +52,7 @@ namespace TestLauncher
                             PaymentSubjectType = PaymentSubjectTypeEnum.Product
                         }
                     },
+                    TotalSum = 123.00m,
                     CustomerContact = "foo@example.com"
                 }
             };
@@ -80,7 +81,7 @@ namespace TestLauncher
                 }
             };
             var res1 = await dummyOrangeRequest.CreateCheckAsync(dummyCreateCheckRequest);
-            var res2 = await dummyOrangeRequest.GetCheckStateAsync("7705721283", "66549876217");
+            var res2 = await dummyOrangeRequest.GetCheckStateAsync("7705721283", "66549876224");
             var res3 = await dummyOrangeRequest.CreateCorrectionCheckAsync(dummyCreateCorrectionCheckRequest);
             var res4 = await dummyOrangeRequest.GetCorrectionCheckStateAsync("5001104058", "12345678990");
             Console.ReadKey();
