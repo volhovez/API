@@ -8,7 +8,7 @@ namespace OrangedataRequest.Models
     ///     Содержимое документа
     /// </summary>
     [JsonObject]
-    public sealed class Content
+    public class Content
     {
         /// <summary>
         ///     Признак расчета
