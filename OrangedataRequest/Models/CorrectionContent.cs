@@ -8,7 +8,7 @@ namespace OrangedataRequest.Models
     ///     Содержимое документа
     /// </summary>
     [JsonObject]
-    public sealed class CorrectionContent
+    public class CorrectionContent
     {
         /// <summary>
         ///     Тип коррекции
